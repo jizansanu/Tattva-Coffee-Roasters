@@ -12,7 +12,7 @@ export default function HowWeMake() {
       />
       <div className="absolute inset-0 bg-black/45" />
       <div className="container-wide relative z-10">
-        <div className="max-w-2xl">
+        <div className="max-w-2xl" data-reveal-stagger>
           <p className="eyebrow mb-5" style={{ color: "var(--color-peach)" }}>
             {s.eyebrow}
           </p>

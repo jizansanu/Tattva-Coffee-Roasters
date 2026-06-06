@@ -25,7 +25,10 @@ export default function Hero() {
       <Nav variant="dark" />
 
       {/* Hero content — centered, dramatic typography */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-20 pb-32">
+      <div
+        data-hero-rise
+        className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-20 pb-32"
+      >
         <p
           className="eyebrow mb-8"
           style={{ color: "rgba(255,255,255,0.9)" }}

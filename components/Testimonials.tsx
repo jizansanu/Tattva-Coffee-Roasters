@@ -46,7 +46,7 @@ export default function Testimonials() {
     <section id="testimonials" className="py-24 md:py-32 overflow-hidden">
       <div className="container-wide">
         {/* ── Header ─ eyebrow + rating ribbon ───────────────────── */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 md:mb-20">
+        <div data-reveal className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 md:mb-20">
           <div>
             <p className="eyebrow mb-4">From the Regulars</p>
             <p className="text-sm text-[color:var(--color-stone)] max-w-sm leading-relaxed">
@@ -72,7 +72,7 @@ export default function Testimonials() {
         </div>
 
         {/* ── Featured pull-quote + floating product card ────────── */}
-        <div className="grid md:grid-cols-12 gap-10 lg:gap-16 items-center mb-20 md:mb-24">
+        <div data-reveal className="grid md:grid-cols-12 gap-10 lg:gap-16 items-center mb-20 md:mb-24">
           {/* The big quote */}
           <figure className="md:col-span-8 relative">
             {/* Giant decorative opening quote */}

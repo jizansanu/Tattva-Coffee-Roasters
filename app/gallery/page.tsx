@@ -20,7 +20,7 @@ export default function GalleryPage() {
         sub="A look inside the roastery, the beans, and the cup."
       />
       <main className="container-wide py-20 md:py-28">
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 [&>*]:mb-6">
+        <div data-reveal-stagger className="columns-1 sm:columns-2 lg:columns-3 gap-6 [&>*]:mb-6">
           {gallery.map((src, i) => (
             <div key={src} className="relative w-full overflow-hidden rounded-lg break-inside-avoid">
               <Image

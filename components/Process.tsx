@@ -25,7 +25,7 @@ export default function Process() {
 
       <div className="container-wide relative z-10 h-full min-h-[860px] md:min-h-[100vh] flex flex-col justify-between pt-24 pb-20 md:pt-32 md:pb-28">
         {/* ── Top row ─ eyebrow left, heading + body right ───────── */}
-        <div className="grid md:grid-cols-12 gap-10 lg:gap-16 items-start">
+        <div data-reveal className="grid md:grid-cols-12 gap-10 lg:gap-16 items-start">
           <p
             className="eyebrow md:col-span-5"
             style={{ color: "rgba(255,255,255,0.92)" }}
@@ -53,7 +53,7 @@ export default function Process() {
           {/* Connecting hairline above the steps */}
           <div className="h-px w-full bg-white/35 mb-14 md:mb-16" />
 
-          <div className="grid md:grid-cols-3 gap-12 md:gap-16 lg:gap-20">
+          <div data-reveal-stagger className="grid md:grid-cols-3 gap-12 md:gap-16 lg:gap-20">
             {s.steps.map((step, i) => (
               <div key={step.n} className="group">
                 {/* Clay accent line — signature element across the brand */}

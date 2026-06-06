@@ -8,7 +8,7 @@ type Props = {
 export default function PageBanner({ eyebrow, title, sub }: Props) {
   return (
     <section className="bg-[color:var(--color-bone)] border-b hairline">
-      <div className="container-wide py-20 md:py-28 text-center">
+      <div data-hero-rise className="container-wide py-20 md:py-28 text-center">
         {eyebrow && <p className="eyebrow mb-5">{eyebrow}</p>}
         <h1 className="text-4xl md:text-6xl leading-tight text-[color:var(--color-espresso)]">
           {title}

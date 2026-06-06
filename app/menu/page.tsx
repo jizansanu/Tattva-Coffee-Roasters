@@ -20,7 +20,7 @@ function MenuColumn({ groups }: { groups: MenuGroup[] }) {
   return (
     <div className="space-y-14">
       {groups.map((group) => (
-        <div key={group.title}>
+        <div key={group.title} data-reveal>
           {/* Group heading */}
           <div className="flex items-center gap-4 mb-7">
             <h2 className="text-2xl md:text-3xl text-[color:var(--color-clay)] tracking-tight">

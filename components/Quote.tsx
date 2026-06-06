@@ -13,7 +13,7 @@ export default function Quote() {
     <section className="bg-[color:var(--color-espresso)] py-20 lg:py-24">
       <div className="container-wide flex flex-col md:flex-row md:justify-between md:items-stretch gap-10 md:gap-20 lg:gap-24">
         {/* ── Left: image at FIXED size (not full-width) ─────────────── */}
-        <div className="relative w-full md:w-[420px] md:h-[580px] lg:w-[540px] lg:h-[640px] aspect-[3/4] md:aspect-auto rounded-lg overflow-hidden shrink-0">
+        <div data-reveal className="relative w-full md:w-[420px] md:h-[580px] lg:w-[540px] lg:h-[640px] aspect-[3/4] md:aspect-auto rounded-lg overflow-hidden shrink-0">
           <Image
             src={s.image}
             alt="Coffee beans pouring from a roaster"
@@ -25,7 +25,7 @@ export default function Quote() {
         </div>
 
         {/* ── Right: quote, vertically centered, left-aligned ────────── */}
-        <figure className="flex-1 flex flex-col justify-center items-start max-w-2xl">
+        <figure data-reveal-stagger className="flex-1 flex flex-col justify-center items-start max-w-2xl">
           <p
             className="eyebrow mb-8"
             style={{ color: "rgba(255,255,255,0.9)" }}

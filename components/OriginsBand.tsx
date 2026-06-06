@@ -23,12 +23,14 @@ export default function OriginsBand() {
       <div className="container-wide relative z-10 py-20 md:py-24 lg:py-28">
         {/* ── Header ──────────────────────────────────────────────── */}
         <p
+          data-reveal
           className="eyebrow text-center mb-6"
           style={{ color: "var(--color-peach)" }}
         >
           {s.eyebrow}
         </p>
         <h2
+          data-reveal
           className="font-serif italic font-normal text-3xl md:text-4xl lg:text-5xl text-center leading-[1.18] tracking-[-0.005em] max-w-3xl mx-auto text-[color:var(--color-cream)] mb-16 md:mb-20"
         >
           {s.heading}
@@ -48,7 +50,7 @@ export default function OriginsBand() {
             aria-hidden
           />
 
-          <ul className="grid grid-cols-2 md:grid-cols-5 gap-x-4 lg:gap-x-6 gap-y-12 relative z-10">
+          <ul data-reveal-stagger className="grid grid-cols-2 md:grid-cols-4 gap-x-4 lg:gap-x-6 gap-y-12 relative z-10">
             {s.origins.map((o) => (
               <li key={o.name} className="group text-center">
                 {/* Ringed dot — sits "on" the connecting line.

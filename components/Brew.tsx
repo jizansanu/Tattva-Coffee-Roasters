@@ -11,7 +11,7 @@ export default function Brew() {
     <section className="py-24 md:py-32">
       <div className="container-wide flex flex-col-reverse md:flex-row md:items-stretch gap-12 md:gap-16">
         {/* ── Left column ─ copy + method strip + CTA + features ─── */}
-        <div className="w-full md:max-w-[460px] lg:max-w-[600px]">
+        <div data-reveal-stagger className="w-full md:max-w-[460px] lg:max-w-[600px]">
           <p className="eyebrow mb-6">{s.eyebrow}</p>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl leading-[1.12] tracking-[-0.01em] text-[color:var(--color-espresso)] max-w-xl">
@@ -65,22 +65,22 @@ export default function Brew() {
         </div>
 
         {/* ── Right column ─ two cup cutouts, flush bottom-right ───── */}
-        <div className="flex-1 flex justify-end items-end relative min-h-[400px] md:min-h-[600px]">
+        <div data-reveal className="flex-1 flex justify-center md:justify-end items-end relative min-h-[300px] sm:min-h-[400px] md:min-h-[600px]">
           <Image
             src="/images/sections/frame7.webp"
             alt="Espresso in a glass"
             width={624}
             height={720}
-            sizes="(max-width: 1024px) 230px, 315px"
-            className="w-[230px] lg:w-[315px] h-auto object-contain relative z-10 transition-transform duration-700 hover:-translate-y-2"
+            sizes="(max-width: 640px) 170px, (max-width: 1024px) 230px, 315px"
+            className="w-[170px] sm:w-[230px] lg:w-[315px] h-auto object-contain relative z-10 transition-transform duration-700 hover:-translate-y-2"
           />
           <Image
             src="/images/sections/frame8.webp"
             alt="Cold brew in a tall glass"
             width={292}
             height={600}
-            sizes="(max-width: 1024px) 200px, 290px"
-            className="w-[200px] lg:w-[290px] h-auto object-contain -ml-6 lg:-ml-10 transition-transform duration-700 hover:-translate-y-2"
+            sizes="(max-width: 640px) 150px, (max-width: 1024px) 200px, 290px"
+            className="w-[150px] sm:w-[200px] lg:w-[290px] h-auto object-contain -ml-5 sm:-ml-6 lg:-ml-10 transition-transform duration-700 hover:-translate-y-2"
           />
         </div>
       </div>

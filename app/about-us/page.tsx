@@ -33,7 +33,7 @@ function Hero() {
 
       <Nav variant="dark" />
 
-      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-20 pb-24">
+      <div data-hero-rise className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-20 pb-24">
         <p
           className="eyebrow mb-8"
           style={{ color: "rgba(255,255,255,0.9)" }}
@@ -79,7 +79,7 @@ function Hero() {
 function Story() {
   return (
     <section className="py-24 md:py-32">
-      <div className="container-wide grid md:grid-cols-12 gap-12 lg:gap-20 items-start">
+      <div data-reveal className="container-wide grid md:grid-cols-12 gap-12 lg:gap-20 items-start">
         {/* Copy */}
         <div className="md:col-span-7">
           <p className="eyebrow mb-6">{aboutStory.eyebrow}</p>
@@ -124,7 +124,7 @@ function Story() {
 
       {/* Stats row — editorial signature */}
       <div className="container-wide mt-24">
-        <div className="border-t hairline pt-12 grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10">
+        <div data-reveal-stagger className="border-t hairline pt-12 grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10">
           {aboutStory.stats.map((stat) => (
             <div key={stat.label} className="group cursor-default">
               <span className="block h-px w-7 bg-[color:var(--color-clay)] mb-5 transition-all duration-500 ease-out group-hover:w-16" />
@@ -183,7 +183,7 @@ function Timeline() {
             const imageOnLeft = i % 2 === 0;
             return (
               <li key={item.year} className="container-wide">
-                <article className="grid md:grid-cols-12 gap-10 lg:gap-16 xl:gap-20 items-center">
+                <article data-reveal className="grid md:grid-cols-12 gap-10 lg:gap-16 xl:gap-20 items-center">
                   {/* Image — alternates side every chapter */}
                   <div
                     className={`md:col-span-5 ${
@@ -224,7 +224,7 @@ function Timeline() {
                       className="font-serif italic font-normal leading-[0.92] tracking-[-0.02em]"
                       style={{
                         color: "var(--color-peach)",
-                        fontSize: "clamp(4.5rem, 9vw, 8rem)",
+                        fontSize: "clamp(3.25rem, 9vw, 8rem)",
                       }}
                     >
                       {item.year}
@@ -324,7 +324,7 @@ function People() {
         </div>
 
         {/* Staggered portrait grid */}
-        <ul className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 lg:gap-x-8 gap-y-12">
+        <ul data-reveal-stagger className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 lg:gap-x-8 gap-y-12">
           {aboutPeople.members.map((m, i) => (
             <li key={m.name} className={`group ${stagger[i] ?? ""}`}>
               {/* Portrait */}
@@ -375,7 +375,7 @@ function People() {
 function Community() {
   return (
     <section className="py-24 md:py-32 bg-[color:var(--color-bone)]">
-      <div className="container-wide grid md:grid-cols-12 gap-12 lg:gap-20 items-center">
+      <div data-reveal className="container-wide grid md:grid-cols-12 gap-12 lg:gap-20 items-center">
         <div className="md:col-span-5 relative aspect-[4/5] rounded-lg overflow-hidden order-last md:order-first">
           <Image
             src={aboutCommunity.image}

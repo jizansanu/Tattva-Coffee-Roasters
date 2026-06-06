@@ -41,6 +41,43 @@
   0%, 100% { transform: translateY(0);   opacity: 0.5; }
   50%      { transform: translateY(6px); opacity: 1;   }
 }
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Scroll-reveal animations ─────────────────────────────────────────
+   Only active when motion is allowed. Hidden initially; ScrollReveal.tsx
+   adds .is-revealed as elements enter the viewport. */
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal],
+  [data-reveal-stagger] > * {
+    opacity: 0;
+    transform: translateY(26px);
+    transition:
+      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  [data-reveal].is-revealed,
+  [data-reveal-stagger] > .is-revealed {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Hero content rises in on first paint (above the fold, no observer needed) */
+  [data-hero-rise] > * {
+    opacity: 0;
+    animation: hero-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  [data-hero-rise] > *:nth-child(1) { animation-delay: 0.05s; }
+  [data-hero-rise] > *:nth-child(2) { animation-delay: 0.15s; }
+  [data-hero-rise] > *:nth-child(3) { animation-delay: 0.28s; }
+  [data-hero-rise] > *:nth-child(4) { animation-delay: 0.40s; }
+  [data-hero-rise] > *:nth-child(5) { animation-delay: 0.52s; }
+}
+
+/* Smooth in-page anchor scrolling */
+html { scroll-behavior: smooth; }
 
 /* Base element defaults live in the `base` layer so Tailwind color/font
    utilities (which sit in the `utilities` layer) always win over them. */
@@ -50,6 +87,10 @@
     color: var(--color-espresso);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+  }
+  /* Prevent stray full-bleed / marquee elements from causing sideways scroll */
+  body {
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5 {

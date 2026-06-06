@@ -15,7 +15,7 @@ export default function ClosingCta() {
           className="object-cover"
         />
         <div className="absolute inset-0 bg-[color:var(--color-espresso)]/75" />
-        <div className="container-narrow relative z-10 text-center">
+        <div data-reveal-stagger className="container-narrow relative z-10 text-center">
           <h2 className="text-4xl md:text-6xl text-[color:var(--color-cream)] leading-tight">
             {s.heading}
           </h2>

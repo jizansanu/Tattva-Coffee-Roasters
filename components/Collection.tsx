@@ -25,10 +25,10 @@ export default function Collection() {
   return (
     <section id="coffee" className="py-24 md:py-32">
       <div className="container-wide">
-        <p className="eyebrow mb-6">{collectionSection.eyebrow}</p>
+        <p className="eyebrow mb-6" data-reveal>{collectionSection.eyebrow}</p>
 
         {/* Inline-text filter heading — click to filter */}
-        <h2 className="text-3xl md:text-5xl lg:text-6xl leading-[1.15]">
+        <h2 data-reveal className="text-3xl md:text-5xl lg:text-6xl leading-[1.15]">
           {productFilters.map((f, i) => (
             <span key={f}>
               <button
@@ -48,12 +48,13 @@ export default function Collection() {
           ))}
         </h2>
 
-        <p className="mt-8 mb-16 max-w-xl text-[color:var(--color-stone)] leading-relaxed">
+        <p data-reveal className="mt-8 mb-16 max-w-xl text-[color:var(--color-stone)] leading-relaxed">
           {collectionSection.sub}
         </p>
 
-        {/* Product grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
+        {/* Product grid (filterable — reveal as one block so re-rendered
+            cards after filtering are never left hidden) */}
+        <div data-reveal className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
           {shown.map((p) => (
             <Link key={p.slug} href={`/product/${p.slug}`} className="group">
               <div className="relative aspect-square rounded-lg overflow-hidden bg-[color:var(--color-bone)] mb-5">

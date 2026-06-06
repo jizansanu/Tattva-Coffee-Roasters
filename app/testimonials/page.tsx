@@ -16,7 +16,7 @@ export default function TestimonialsPage() {
       <Nav />
       <PageBanner eyebrow="What our clients say" title="Loved by regulars" sub="A few words from the people who drink Tattva every day." />
       <main className="container-wide py-20 md:py-28">
-        <div className="grid sm:grid-cols-2 gap-6">
+        <div data-reveal-stagger className="grid sm:grid-cols-2 gap-6">
           {testimonials.map((t) => (
             <figure key={t.name} className="bg-[color:var(--color-bone)] rounded-lg p-10 flex flex-col gap-5">
               <div className="flex gap-1 text-[color:var(--color-clay)]">

@@ -13,13 +13,13 @@ export default function Story() {
       <div className="container-wide">
         {/* ── Top row ──────────────────────────────────────── */}
         <div className="grid md:grid-cols-12 gap-10 lg:gap-16 items-center">
-          <div className="md:col-span-7">
+          <div className="md:col-span-7" data-reveal>
             <p className="eyebrow mb-6">{s.eyebrow}</p>
             <h2 className="text-4xl md:text-5xl lg:text-[3.75rem] leading-[1.12] text-[color:var(--color-espresso)] max-w-2xl">
               {s.heading}
             </h2>
           </div>
-          <div className="md:col-span-5">
+          <div className="md:col-span-5" data-reveal>
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden bg-[color:var(--color-bone)]">
               <BgVideo
                 {...makeSection.video}
@@ -38,7 +38,7 @@ export default function Story() {
 
         {/* ── Bottom row ───────────────────────────────────── */}
         <div className="grid md:grid-cols-12 gap-10 lg:gap-16">
-          <div className="md:col-span-5">
+          <div className="md:col-span-5" data-reveal>
             {s.body.map((p, i) => (
               <p
                 key={p}
@@ -58,7 +58,7 @@ export default function Story() {
           </div>
 
           <div className="md:col-span-7">
-            <ul>
+            <ul data-reveal-stagger>
               {values.map((v, i) => (
                 <li
                   key={v.title}

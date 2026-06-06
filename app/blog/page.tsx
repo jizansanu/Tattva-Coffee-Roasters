@@ -17,7 +17,7 @@ export default function BlogPage() {
       <Nav />
       <PageBanner eyebrow="Journal" title="Notes on coffee" sub="Brewing tips, origin stories, and the occasional opinion." />
       <main className="container-wide py-20 md:py-28">
-        <div className="grid md:grid-cols-3 gap-10">
+        <div data-reveal-stagger className="grid md:grid-cols-3 gap-10">
           {posts.map((p) => (
             <Link key={p.slug} href={`/blog/${p.slug}`} className="group">
               <div className="relative aspect-[4/3] rounded-lg overflow-hidden mb-5">

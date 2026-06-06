@@ -12,7 +12,7 @@ export default function Explore() {
     <section className="py-24 md:py-32 bg-[color:var(--color-bone)] overflow-hidden">
       <div className="grid md:grid-cols-2 items-center gap-12 md:gap-0">
         {/* ── Left: image bleeds to viewport edge ─────────────────── */}
-        <div className="relative h-[460px] md:h-[640px] lg:h-[760px] md:rounded-r-2xl overflow-hidden group">
+        <div data-reveal className="relative h-[380px] sm:h-[460px] md:h-[640px] lg:h-[760px] md:rounded-r-2xl overflow-hidden group">
           <Image
             src={s.image}
             alt="A barista at work behind the espresso bar"
@@ -51,7 +51,7 @@ export default function Explore() {
         </div>
 
         {/* ── Right: copy + stats (constrained padding) ───────────── */}
-        <div className="px-6 md:pl-12 lg:pl-20 md:pr-6 lg:pr-12 max-w-2xl">
+        <div data-reveal-stagger className="px-6 md:pl-12 lg:pl-20 md:pr-6 lg:pr-12 max-w-2xl">
           <p className="eyebrow mb-6">{s.eyebrow}</p>
           <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.1] tracking-[-0.01em] text-[color:var(--color-espresso)]">
             {s.headingLead}{" "}
@@ -75,14 +75,14 @@ export default function Explore() {
 
           {/* Editorial stats — italic serif numerals, clay accent line above,
               hover extends the line for a quiet micro-interaction. */}
-          <dl className="mt-16 grid grid-cols-3 gap-x-6 lg:gap-x-10 max-w-xl">
+          <dl className="mt-14 grid grid-cols-3 gap-x-3 sm:gap-x-6 lg:gap-x-10 max-w-xl">
             {s.stats.map((stat) => (
               <div key={stat.label} className="group cursor-default">
-                <span className="block h-px w-7 bg-[color:var(--color-clay)] mb-6 transition-all duration-500 ease-out group-hover:w-16" />
-                <dt className="font-serif italic font-normal text-5xl md:text-6xl lg:text-7xl leading-[0.9] tracking-[-0.02em] text-[color:var(--color-espresso)] transition-colors duration-300 group-hover:text-[color:var(--color-clay)]">
+                <span className="block h-px w-7 bg-[color:var(--color-clay)] mb-4 sm:mb-6 transition-all duration-500 ease-out group-hover:w-16" />
+                <dt className="font-serif italic font-normal text-[1.75rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[0.9] tracking-[-0.02em] text-[color:var(--color-espresso)] transition-colors duration-300 group-hover:text-[color:var(--color-clay)]">
                   {stat.value}
                 </dt>
-                <dd className="text-[0.7rem] uppercase tracking-[0.22em] text-[color:var(--color-stone)] mt-5 leading-snug">
+                <dd className="text-[0.62rem] sm:text-[0.7rem] uppercase tracking-[0.18em] sm:tracking-[0.22em] text-[color:var(--color-stone)] mt-3 sm:mt-5 leading-snug">
                   {stat.label}
                 </dd>
               </div>
