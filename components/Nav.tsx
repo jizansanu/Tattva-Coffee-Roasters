@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { brand, navCenter, navRight } from "@/lib/content";
 
 type Props = { variant?: "light" | "dark" };
@@ -17,16 +18,15 @@ export default function Nav({ variant = "light" }: Props) {
     <header className={`${wrapBg} z-50 w-full`}>
       <div className="container-wide grid grid-cols-3 items-center h-20">
         {/* Left: logo */}
-        <Link href="/" className={`flex items-center gap-3 ${text}`}>
-          <span
-            className={`inline-block w-9 h-9 rounded-full border-2 ${
-              isDark ? "border-white" : "border-[color:var(--color-espresso)]"
-            }`}
-            aria-hidden
+        <Link href="/" className="flex items-center" aria-label={brand.fullName}>
+          <Image
+            src={isDark ? "/tattva-logo-cream.svg" : "/tattva-logo.svg"}
+            alt={brand.name}
+            width={145}
+            height={33}
+            priority
+            className="h-7 w-auto md:h-8"
           />
-          <span className="font-serif text-2xl leading-none tracking-tight">
-            {brand.name}
-          </span>
         </Link>
 
         {/* Center nav links */}

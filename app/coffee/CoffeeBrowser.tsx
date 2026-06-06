@@ -5,9 +5,9 @@ import { products, productFilters } from "@/lib/content";
 import ProductGrid from "@/components/ProductGrid";
 
 export default function CoffeeBrowser({ initial }: { initial?: string }) {
-  const [active, setActive] = useState(initial ?? "All Coffee");
+  const [active, setActive] = useState(initial ?? "All");
   const shown =
-    active === "All Coffee"
+    active === "All"
       ? products
       : products.filter((p) => p.category === active);
 

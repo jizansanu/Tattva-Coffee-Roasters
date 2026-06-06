@@ -14,9 +14,9 @@ export default function CoffeePage() {
     <>
       <Nav />
       <PageBanner
-        eyebrow="Crafted coffee collection"
-        title="Our coffee"
-        sub="A curated selection of coffees, each with its own flavour story and brewing style."
+        eyebrow="What we pour"
+        title="The Tattva lineup"
+        sub="Filter coffee on a fresh decoction, signature decoction drinks, cold coffee, and single-origin Coorg powder to take home."
       />
       <main>
         <CoffeeBrowser />

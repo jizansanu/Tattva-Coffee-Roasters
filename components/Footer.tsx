@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { brand, contact } from "@/lib/content";
 import { Instagram, Twitter, Linkedin, MapPin } from "lucide-react";
 
@@ -37,12 +38,17 @@ export default function Footer() {
       {/* main footer */}
       <div className="container-wide py-16 grid md:grid-cols-12 gap-10">
         <div className="md:col-span-4">
-          <p className="font-serif text-3xl mb-4">{brand.fullName}</p>
+          <Image
+            src="/tattva-logo-cream.svg"
+            alt={brand.fullName}
+            width={145}
+            height={33}
+            className="h-9 w-auto mb-5"
+          />
           <p className="opacity-70 max-w-sm leading-relaxed text-sm">
-            Tattva Coffee Roasters was created with a simple focus: making good
-            coffee that feels easy to enjoy every day. We believe coffee should be
-            honest, well-made, and part of your routine — not complicated or
-            overdesigned.
+            A filter-coffee roastery and café in JP Nagar, Bengaluru. Single-origin
+            beans from Coorg, South Indian filter coffee done properly, and a few
+            good things to eat alongside.
           </p>
         </div>
 
@@ -110,7 +116,17 @@ export default function Footer() {
 
       <div className="container-wide py-6 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-2 text-xs opacity-60">
         <p>© {new Date().getFullYear()} {brand.fullName}. All rights reserved.</p>
-        <p>Made with care in Bengaluru.</p>
+        <p>
+          Carefully crafted by{" "}
+          <a
+            href="https://oliandhue.com"
+            target="_blank"
+            rel="noreferrer"
+            className="underline-offset-4 hover:underline hover:text-[color:var(--color-peach)] transition"
+          >
+            oliandhue.com
+          </a>
+        </p>
       </div>
     </footer>
   );

@@ -15,9 +15,9 @@ import { ArrowRight } from "lucide-react";
 const VISIBLE = 4;
 
 export default function Collection() {
-  const [active, setActive] = useState("All Coffee");
+  const [active, setActive] = useState("All");
   const filtered =
-    active === "All Coffee"
+    active === "All"
       ? products
       : products.filter((p) => p.category === active);
   const shown = filtered.slice(0, VISIBLE);
@@ -28,7 +28,7 @@ export default function Collection() {
         <p className="eyebrow mb-6">{collectionSection.eyebrow}</p>
 
         {/* Inline-text filter heading — click to filter */}
-        <h2 className="text-4xl md:text-5xl lg:text-6xl leading-[1.15]">
+        <h2 className="text-3xl md:text-5xl lg:text-6xl leading-[1.15]">
           {productFilters.map((f, i) => (
             <span key={f}>
               <button
@@ -77,16 +77,10 @@ export default function Collection() {
                   alt={p.name}
                   fill
                   sizes="(max-width: 1024px) 50vw, 25vw"
-                  className="object-contain p-6 transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-1"
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.05]"
                 />
-                <span className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-[color:var(--color-cream)] grid place-items-center shadow-sm">
-                  <Image
-                    src="/images/sections/beans-icon.svg"
-                    alt=""
-                    width={18}
-                    height={18}
-                    aria-hidden
-                  />
+                <span className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-[color:var(--color-cream)]/90 backdrop-blur-sm text-[0.6rem] uppercase tracking-[0.18em] text-[color:var(--color-bark)] shadow-sm">
+                  {p.category}
                 </span>
               </div>
               <h3 className="text-sm uppercase tracking-[0.14em] font-medium text-[color:var(--color-espresso)] group-hover:text-[color:var(--color-clay)] transition">
@@ -114,7 +108,7 @@ export default function Collection() {
         {/* Footer — honest CTA + helpful detail */}
         <div className="mt-16 flex flex-col sm:flex-row sm:items-baseline gap-y-4 gap-x-10">
           <Link href="/coffee" className="btn-primary">
-            All {products.length} coffees
+            See the full lineup
             <ArrowRight size={16} />
           </Link>
           <p className="text-sm text-[color:var(--color-stone)] max-w-md leading-relaxed">

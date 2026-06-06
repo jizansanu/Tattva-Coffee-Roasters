@@ -16,13 +16,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Tattva Coffee Roasters — JP Nagar, Bengaluru",
+  title: "Tattva Coffee Roasters — Filter Coffee, JP Nagar Bengaluru",
   description:
-    "Single-origin Indian coffees, slow-roasted in small batches. Café and roastery in JP Nagar, Bengaluru.",
+    "South Indian filter coffee on a fresh decoction, single-origin beans from Coorg, and signature pours like the Filter Tonic. Café & roastery in JP Nagar, Bengaluru.",
   openGraph: {
     title: "Tattva Coffee Roasters",
     description:
-      "The essence, in every cup. Roastery & café in JP Nagar, Bengaluru.",
+      "South Indian filter coffee, done properly. Single-origin Coorg beans. JP Nagar, Bengaluru.",
     type: "website",
   },
 };

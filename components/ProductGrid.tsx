@@ -28,16 +28,10 @@ export default function ProductGrid({ items }: { items: Product[] }) {
               alt={p.name}
               fill
               sizes="(max-width: 1024px) 50vw, 25vw"
-              className="object-contain p-6 transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-1"
+              className="object-cover transition-transform duration-700 group-hover:scale-[1.05]"
             />
-            <span className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-[color:var(--color-cream)] grid place-items-center shadow-sm">
-              <Image
-                src="/images/sections/beans-icon.svg"
-                alt=""
-                width={18}
-                height={18}
-                aria-hidden
-              />
+            <span className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-[color:var(--color-cream)]/90 backdrop-blur-sm text-[0.6rem] uppercase tracking-[0.18em] text-[color:var(--color-bark)] shadow-sm">
+              {p.category}
             </span>
           </div>
           <h3 className="text-sm uppercase tracking-[0.14em] font-medium text-[color:var(--color-espresso)] group-hover:text-[color:var(--color-clay)] transition">

@@ -7,12 +7,11 @@ import ProductGrid from "@/components/ProductGrid";
 import { products } from "@/lib/content";
 
 const CATEGORY_MAP: Record<string, { label: string; filter: string; blurb: string }> = {
-  decaf: { label: "Decaf", filter: "Decaf", blurb: "All the flavour, none of the caffeine. Gently processed to keep the character intact." },
-  filter: { label: "Filter", filter: "Filter", blurb: "Clean, bright and aromatic — roasts that shine through paper, cloth or a South Indian filter." },
-  espresso: { label: "Espresso", filter: "Espresso", blurb: "Rounded, full-bodied roasts built to pull rich shots and stand up to milk." },
-  "cold-brew": { label: "Cold Brew", filter: "Cold Brew", blurb: "Smooth, low-acid coffees made for long, slow steeps over ice." },
-  "single-origin": { label: "Single Origin", filter: "Single Origin", blurb: "One estate, one harvest, one story — coffees that taste of exactly where they're from." },
-  "signature-blends": { label: "Signature Blends", filter: "Signature", blurb: "Our house blends — balanced, consistent, and made for everyday." },
+  filter: { label: "Filter Coffee", filter: "Filter", blurb: "The everyday cup, built on a fresh decoction and single-origin Coorg beans." },
+  signature: { label: "Signature Drinks", filter: "Signature", blurb: "Decoction, reimagined — Filter Tonic, Filter Ale, and the Filter Affogato." },
+  cold: { label: "Cold Coffee", filter: "Cold", blurb: "Smooth, sweet, properly cold. For Bengaluru afternoons." },
+  black: { label: "Black Coffee", filter: "Black", blurb: "Just decoction and water, hot or cold. Nowhere to hide." },
+  "take-home": { label: "Take Home", filter: "Take Home", blurb: "Our single-origin Coorg powder — House Blend and Pure Blend — to brew at home." },
 };
 
 export function generateStaticParams() {

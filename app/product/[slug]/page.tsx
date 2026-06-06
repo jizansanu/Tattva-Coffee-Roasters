@@ -6,7 +6,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ProductGrid from "@/components/ProductGrid";
 import { products } from "@/lib/content";
-import { ArrowLeft, Check } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -32,7 +32,7 @@ export default async function ProductPage({
   if (!product) notFound();
 
   const related = products.filter((p) => p.slug !== product.slug).slice(0, 4);
-  const notesList = product.notes.split(",").map((n) => n.trim());
+  const isTakeHome = product.category === "Take Home";
 
   return (
     <>
@@ -42,7 +42,7 @@ export default async function ProductPage({
           href="/coffee"
           className="inline-flex items-center gap-2 text-sm text-[color:var(--color-stone)] hover:text-[color:var(--color-espresso)] transition mb-10"
         >
-          <ArrowLeft size={16} /> Back to coffee
+          <ArrowLeft size={16} /> Back to the lineup
         </Link>
 
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
@@ -53,7 +53,7 @@ export default async function ProductPage({
               fill
               priority
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-contain p-12"
+              className="object-cover"
             />
           </div>
 
@@ -62,51 +62,50 @@ export default async function ProductPage({
             <h1 className="text-4xl md:text-5xl text-[color:var(--color-espresso)] leading-tight">
               {product.name}
             </h1>
+            <p className="mt-3 text-[color:var(--color-stone)]">{product.origin}</p>
+
             <p className="mt-6 font-serif text-3xl text-[color:var(--color-bark)]">
+              {isTakeHome ? "from " : ""}
               {product.price}{" "}
               <span className="text-base text-[color:var(--color-stone)]">
                 / {product.weight}
               </span>
             </p>
 
-            <div className="mt-8">
-              <p className="text-xs uppercase tracking-widest text-[color:var(--color-stone)] mb-3">
-                Tasting notes
-              </p>
-              <ul className="space-y-2">
-                {notesList.map((n) => (
-                  <li key={n} className="flex items-center gap-3 text-[color:var(--color-bark)]">
-                    <Check size={16} className="text-[color:var(--color-clay)]" />
-                    {n}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <p className="mt-8 text-[color:var(--color-stone)] leading-relaxed max-w-md">
-              Roasted in small batches at our JP Nagar roastery. Whole bean by
-              default — ask us to grind for your brew method when you pick up.
+            <p className="mt-8 text-lg text-[color:var(--color-bark)] leading-relaxed max-w-md italic font-serif">
+              {product.notes}
             </p>
 
-            {/* Honest CTAs — we don't sell online (yet). Route to Instagram DM
-                + the café visit page. TODO: wire to real cart when launched. */}
+            <p className="mt-6 text-[color:var(--color-stone)] leading-relaxed max-w-md">
+              {isTakeHome
+                ? "Single-origin beans from Coorg, ground for South Indian filter. Available at the café in 250g and 500g."
+                : "Made to order at the bar on a fresh decoction. Available in the sizes on our menu — takeaway just ₹10 more."}
+            </p>
+
+            {/* Honest CTAs — café-first business, no online ordering yet. */}
             <div className="mt-10 flex flex-wrap gap-4">
-              <a
-                href={`https://www.instagram.com/tattvacoffeeroasters/`}
-                target="_blank"
-                rel="noreferrer"
-                className="btn-primary"
-              >
-                Reserve on Instagram
-              </a>
+              {isTakeHome ? (
+                <a
+                  href="https://www.instagram.com/tattvacoffeeroasters/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-primary"
+                >
+                  Reserve on Instagram
+                </a>
+              ) : (
+                <Link href="/menu" className="btn-primary">
+                  See it on the menu
+                </Link>
+              )}
               <Link href="/contact-us" className="btn-ghost">
                 Visit the café
               </Link>
             </div>
             <p className="mt-5 text-xs text-[color:var(--color-stone)] max-w-md leading-relaxed">
-              We don&apos;t ship online yet. Drop us a DM on Instagram to reserve
-              a bag, or come pick it up at the JP Nagar café — we&apos;ll grind
-              to your brew method.
+              {isTakeHome
+                ? "We don't ship online yet — DM us on Instagram to reserve a pack, or pick one up at the JP Nagar café."
+                : "Best enjoyed fresh at the café in JP Nagar. Drop by — we open early."}
             </p>
           </div>
         </div>
